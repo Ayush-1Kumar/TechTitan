@@ -195,6 +195,11 @@ router.post('/highscore',authenticate,async(req,res)=>{
       const id=req.userID
       const currentScore=req.body.score
       const highscore=user.highScore
+      const totalgames = await User.findByIdAndUpdate(
+         user._id,
+         { $push: { allthescores:currentScore} },
+         { new: true } 
+      )
       console.log(currentScore)
       const curr=parseInt(currentScore)
       console.log(curr)
@@ -203,7 +208,7 @@ router.post('/highscore',authenticate,async(req,res)=>{
             {$set:{highScore:curr}},
             {new:true});
       }
-      res.status(200).json({message:"all ok"})
+      res.status(200).json({message:totalgames})
    }catch(err){
       console.log("${err}")
    }
@@ -244,6 +249,15 @@ router.get('/mypendingrequest',authenticate,async(req,res)=>{
       const currUser=await User.findOne({_id:id})
       const pendingRequest=await currUser.populate('pendingRequest')
       res.status(200).json({msg:pendingRequest.pendingRequest})
+   } catch (error) {
+      res.status(400).json({msg:"error occured"})
+   }
+})
+router.get('/getinfo',authenticate,async(req,res)=>{
+   const id=req.userID
+   try {
+      const currUser=await User.findOne({_id:id})
+      res.status(200).json({msg:currUser})
    } catch (error) {
       res.status(400).json({msg:"error occured"})
    }

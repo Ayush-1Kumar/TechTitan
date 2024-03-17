@@ -74,6 +74,13 @@ const leftPane = (props)=>{
             const setTextData=props.setTextData
             setTextData(dummyData.hard[randomInt])
         }
+        else if(eventid==7){
+            setVisibleButtonDiff((prev)=>{
+                return {...prev, color: "dark", text: "ProgramPractice"};
+            })
+            const setTextData=props.setTextData
+            setTextData(dummyData.ProgramPractice[randomInt])
+        }
     }
     
     return(
@@ -94,13 +101,14 @@ const leftPane = (props)=>{
                         <button type="button" class="btn btn-success btn-option" id="4" onClick={changeStateDiff}>Easy</button>
                         <button type="button" class="btn btn-warning btn-option" id="5" onClick={changeStateDiff}>Medium</button>
                         <button type="button" class="btn btn-danger btn-option" id="6" onClick={changeStateDiff}>Hard</button>
+                        <button type="button" class="btn btn-dark btn-option" id="7" onClick={changeStateDiff}>Program Practice</button>
                     </div>  
                 }
                 <a class={`btn btn-${visibleButtonTimer.color} leftpaneout`} onClick={handleToggleTimer} data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" >
                     {visibleButtonTimer.text}
                 </a>
                 {toggleButtonTimer && 
-                    <div className="card menulist">
+                    <div className="card menulist2">
                         <button type="button" class="btn btn-success btn-option" id="1" onClick={changeStateTimer}>1 MINUTE</button>
                         <button type="button" class="btn btn-warning btn-option" id="2" onClick={changeStateTimer}>2 MINUTE</button>
                         <button type="button" class="btn btn-danger btn-option" id="3" onClick={changeStateTimer}>5 MINUTE</button>

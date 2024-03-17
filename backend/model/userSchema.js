@@ -47,7 +47,13 @@ const userSchema=new mongoose.Schema({
     highScore:{
         type:Number,
         default:0
-    }
+    },
+    allthescores: [
+        {
+            type: Number,
+        }
+    ]
+    
 })
 
 userSchema.pre('save',async function(next){

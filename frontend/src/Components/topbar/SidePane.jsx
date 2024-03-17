@@ -26,6 +26,9 @@ const CustomSidePane = ({ show, handleClose }) => {
         <button type="button" class="btn border-0 btn-lg active text-left">
           <Link to='/friends' style={{ textDecoration: 'none', color: 'inherit' }}>Friends</Link>
         </button>
+        <button type="button" class="btn border-0 btn-lg active text-left">
+          <Link to='/chart' style={{ textDecoration: 'none', color: 'inherit' }}>Chart</Link>
+        </button>
         <button type="button" class="btn border-0 btn-lg active text-left" onClick={logout}>LogOut
         </button>
         <button type="button" class="btn border-0 btn-lg active text-left">
