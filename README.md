@@ -7,7 +7,7 @@
  1. Ayush Kumar  (Ayush-1Kumar)  Link to github account : https://github.com/Ayush-1Kumar
  2. Ayush Kumar  (ayushkumar135) Link to github account : https://github.com/ayushkumar135
  3. Aaruni Awasthi (mrawasthi)   Link to github account : https://github.com/mrawasthi
- 4. Kushaagra Rawat
+ 4. Kushaagra Rawat (KushaagraRawat) Link to github account : https://github.com/KushaagraRawat
 
 
 
